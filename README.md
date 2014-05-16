@@ -17,7 +17,7 @@ Create the CRUD actions:
 
 ```
 app.resources('your_controller');
-// /your_controller
+// '/your_controller'
 ```
 
 Or if you want to create CRUD without the id on the url (removing the show action):
@@ -35,7 +35,7 @@ You can set nested controllers, you only have to do:
 app.resources('your_controller', function(){
   app.resources('another_controller');
 });
-// /your_controller/:your_controller_id/another_controller
+// '/your_controller/:your_controller_id/another_controller'
 ```
 
 Define Controller
