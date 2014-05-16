@@ -7,7 +7,7 @@ You can create routes for your controllers. You only need to include the followi
 require('express-routes-controllers');
 ```
 
-And you have to add the dir where you have your controllers:
+And add the dir where you have your controllers:
 
 ```
 app.set('controllers', __dirname + '/controllers');
@@ -39,7 +39,7 @@ app.resources('your_controller', function(){
 
 ## Define Controller
 
-The controllers need to have:
+Example of a controller
 
 ```
 module.exports = {
