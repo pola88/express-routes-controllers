@@ -39,7 +39,7 @@ app.resources('your_controller', function(){
 
 ## Define Controller
 
-Example of a controller
+Example:
 
 ```
 module.exports = {
