@@ -26,8 +26,7 @@ Or if you want to create CRUD without the id on the url (removing the show actio
 app.resource('your_controller');
 ```
 
-Nested controllers
-==================
+## Nested controllers
 
 You can set nested controllers, you only have to do:
 
@@ -38,8 +37,7 @@ app.resources('your_controller', function(){
 // '/your_controller/:your_controller_id/another_controller'
 ```
 
-Define Controller
-================
+## Define Controller
 
 The controllers need to have:
 
@@ -61,8 +59,7 @@ The id will be the name of the controllers, for example, If the name of the cont
 req.params.user
 ```
 
-Change the url
-==============
+## Change the url
 
 If you have the user controller and you want that the url be '/account'
 
