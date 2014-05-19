@@ -29,7 +29,7 @@ describe('Resources', function () {
       this.request.options.url += '/123';
 
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('resources_controller/show');
+        expect(body.msg).toEqual('resources_controller/show_123');
         done();
       });
     });
@@ -39,7 +39,7 @@ describe('Resources', function () {
       this.request.options.method = 'delete';
 
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('resources_controller/destroy');
+        expect(body.msg).toEqual('resources_controller/destroy_123');
         done();
       });
     });
@@ -49,7 +49,7 @@ describe('Resources', function () {
       this.request.options.method = 'put';
 
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('resources_controller/update');
+        expect(body.msg).toEqual('resources_controller/update_123');
         done();
       });
     });
@@ -65,11 +65,11 @@ describe('Resources', function () {
     });
 
     it('call member_action action', function(done) {
-      this.request.options.url += '/1234/member_action';
+      this.request.options.url += '/123/member_action';
       this.request.options.method = 'post';
 
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('resources_controller/member_action');
+        expect(body.msg).toEqual('resources_controller/member_action_123');
         done();
       });
     });
