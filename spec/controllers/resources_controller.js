@@ -16,5 +16,11 @@ module.exports = {
   },
   update: function(req,res) {
     res.json( { msg: 'resources_controller/update' } );
+  },
+  collection_action: function(req,res) {
+    res.json( { msg: 'resources_controller/collection_action' } );
+  },
+  member_action: function(req, res) {
+    res.json( { msg: 'resources_controller/member_action' } );
   }
 }

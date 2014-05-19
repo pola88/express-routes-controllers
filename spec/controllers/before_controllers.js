@@ -10,7 +10,6 @@ module.exports = {
       index: [ beforeFunction ],
       create: [ beforeFunction ],
       show: [ beforeFunction ],
-      destroy: [ beforeFunction ],
       update: [ beforeFunction ]
     }
   },
@@ -24,7 +23,11 @@ module.exports = {
     res.json( { msg: 'before_controllers/show_' + req.message  } );
   },
   destroy: function(req,res) {
-    res.json({ msg: 'before_controllers/destroy_' + req.message } );
+    if (req.message) {
+      res.json({ msg: 'before_controllers/destroy_' + req.message } );
+    } else {
+      res.json({ msg: 'before_controllers/destroy' } ); 
+    }
   },
   update: function(req,res) {
     res.json( { msg: 'before_controllers/update_' + req.message } );

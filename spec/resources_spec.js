@@ -54,6 +54,26 @@ describe('Resources', function () {
       });
     });
 
+    it('call collection_action action', function(done) {
+      this.request.options.url += '/collection_action';
+      this.request.options.method = 'get';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/collection_action');
+        done();
+      });
+    });
+
+    it('call member_action action', function(done) {
+      this.request.options.url += '/1234/member_action';
+      this.request.options.method = 'post';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/member_action');
+        done();
+      });
+    });
+
   });
 
   describe('Changes default name', function() {
@@ -164,7 +184,7 @@ describe('Resources', function () {
       this.request.options.method = 'delete';
 
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('before_controllers/destroy_foo');
+        expect(body.msg).toEqual('before_controllers/destroy');
         done();
       });
     });

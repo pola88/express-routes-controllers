@@ -2,7 +2,14 @@ module.exports = function(server){
   var app = server.app;
   
   //resources
-  app.resources('resources_controller');
+  app.resources('resources_controller', {
+    collection: {
+      get: ['collection_action']
+    },
+    member: {
+      post: ['member_action']
+    }
+  });
   app.resources('change_name_controller', {
     name: 'custom_name'
   });
