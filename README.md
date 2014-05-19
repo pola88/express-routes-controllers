@@ -16,7 +16,7 @@ app.set('controllers', __dirname + '/controllers');
 Create the CRUD actions:
 
 ```
-app.resources('your_controller');
+app.resources('your_controller', options);
 
 // GET '/your_controller'
 // POST '/your_controller'
@@ -28,7 +28,7 @@ app.resources('your_controller');
 Or if you want to create CRUD without the id on the url (removing the show action):
 
 ```
-app.resource('your_controller');
+app.resource('your_controller', options);
 
 // GET '/your_controller'
 // POST '/your_controller'
@@ -50,6 +50,24 @@ app.resources('your_controller', {
 
 // GET /your_controller/collection_action
 // POST /your_controller/:your_controller/member_action
+```
+
+Options:
+
+```
+  var options = {
+                  collection: {
+                    get: [ /* Array of custom actions */ ],
+                    post: [ /* Array of custom actions */ ],
+                  },
+                  member: {
+                    get: [ /* Array of custom actions */ ],
+                    post: [ /* Array of custom actions */ ],
+                  },
+                  name: 'Change the default name for the url. DEFAULT: name_of_controller',
+                  id: 'The id variable on the ulr. DEFAULT: name_of_controller_id',
+                  root: 'Boolean. DEFAULT: false'
+                }
 ```
 
 ## Nested controllers
