@@ -2,3 +2,4 @@ spec
 config
 
 .travis.yml
+app.js
