@@ -20,7 +20,7 @@ var rest = new Rest( { controllers: __dirname + '/app/controllers' } );
 
 ```
 
-And the, add the routes:
+And then, add the routes:
 
 ```
 //your_controller.js
