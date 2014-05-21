@@ -1,6 +1,6 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Creates routes for the controllers",
   "dependencies": {
     "express": "3.4.8",

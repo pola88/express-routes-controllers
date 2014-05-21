@@ -1,8 +1,12 @@
+var Rest = require('../lib');
+
+var rest = new Rest( { controllers: __dirname + '/controllers' } );
+
 module.exports = function(server){
   var app = server.app;
   
   //resources
-  app.resources('resources_controller', {
+  rest.resources('resources_controller', {
     collection: {
       get: ['collection_action']
     },
@@ -10,15 +14,17 @@ module.exports = function(server){
       post: ['member_action']
     }
   });
-  app.resources('change_name_controller', {
+  rest.resources('change_name_controller', {
     name: 'custom_name'
   });
-  app.resources('before_controllers');
+  rest.resources('before_controllers');
 
 
   //resource
-  app.resource('resource_controller');
-  app.resource('change_name_controller', {
+  rest.resource('resource_controller');
+  rest.resource('change_name_controller', {
     name: 'resource_custom_name'
   });
+
+  rest.mountRoutes(app);
 }
