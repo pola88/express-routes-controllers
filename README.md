@@ -51,7 +51,7 @@ rest.mountRoutes(app);
 
 ```
 
-## Resoruces and Resoruce:
+## Resources and Resource:
 
 You can add the CRUD actions:
 
