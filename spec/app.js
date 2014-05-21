@@ -1,7 +1,5 @@
 var express = require('express');
 
-var resources = require('../lib');
-
 var app = express();
 // https://github.com/ferlores/easy-routes/tree/master/testing
 // configure Express
@@ -10,8 +8,6 @@ app.configure(function() {
   app.use(express.json());
   app.use(express.methodOverride());
   app.use(app.router);
-
-  app.set('controllers', __dirname + '/controllers');
 });
 
 exports.start = function( config, readyCallback ) {
