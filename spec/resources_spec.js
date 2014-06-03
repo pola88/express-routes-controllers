@@ -201,7 +201,7 @@ describe('Resources', function () {
 
   });
 
-  describe('Resources Controller', function() {
+  describe('Nested Controller', function() {
     beforeEach(function() {
       this.request.options.url += 'resources_controller/2/nested_controller';
     });
