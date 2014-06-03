@@ -13,7 +13,17 @@ module.exports = function(server){
     member: {
       post: ['member_action']
     }
+  }, function() {
+    rest.resources('nested_controller',{
+      collection: {
+        get: ['collection_action']
+      },
+      member: {
+        post: ['member_action']
+      }
+    });
   });
+
   rest.resources('change_name_controller', {
     name: 'custom_name'
   });
