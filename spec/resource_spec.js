@@ -6,11 +6,11 @@ describe('Resource', function () {
     beforeEach(function() {
       this.request.options.url += 'resource_controller';
     })
-    
+
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resource_controller/index');
-        
+
         done();
       });
     });
@@ -20,7 +20,7 @@ describe('Resource', function () {
 
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resource_controller/create');
-        
+
         done();
       });
     });
@@ -77,7 +77,7 @@ describe('Resource', function () {
 
   });
 
-  describe('Changes default name', function() {    
+  describe('Changes default name', function() {
 
     describe('call with the new name', function() {
       beforeEach(function() {
@@ -87,7 +87,7 @@ describe('Resource', function () {
       it('call index action', function(done) {
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('custom_name/index');
-          
+
           done();
         });
       });
@@ -97,7 +97,7 @@ describe('Resource', function () {
 
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('custom_name/create');
-          
+
           done();
         });
       });
@@ -150,7 +150,7 @@ describe('Resource', function () {
             done();
           });
         });
-        
+
       });
 
     });

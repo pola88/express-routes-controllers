@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "request": "2.34.0",
-    "jasmine-node": "1.13.1",
+    "jasmine-node": "~1.14",
     "commander": "~2.1.0",
     "config": "0.4.35"
   },
