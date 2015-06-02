@@ -1,5 +1,4 @@
 var beforeFunction = function beforeFunction(req, res, next) {
-  console.log("==== BEFORE FUN ====")
   req.message = 'foo';
 
   next();
