@@ -1,4 +1,5 @@
 var beforeFunction = function beforeFunction(req, res, next) {
+  console.log("==== BEFORE FUN ====")
   req.message = 'foo';
 
   next();
@@ -6,7 +7,7 @@ var beforeFunction = function beforeFunction(req, res, next) {
 
 module.exports = {
   options: {
-    before: { 
+    before: {
       index: [ beforeFunction ],
       create: [ beforeFunction ],
       show: [ beforeFunction ],
@@ -26,7 +27,7 @@ module.exports = {
     if (req.message) {
       res.json({ msg: 'before_controllers/destroy_' + req.message } );
     } else {
-      res.json({ msg: 'before_controllers/destroy' } ); 
+      res.json({ msg: 'before_controllers/destroy' } );
     }
   },
   update: function(req,res) {

@@ -62,7 +62,7 @@ describe('Resources', function () {
       });
     });
 
-    iit('call collection_action action', function(done) {
+    it('call collection_action action', function(done) {
       this.request.options.url += '/collection_action';
       this.request.options.method = 'get';
 
