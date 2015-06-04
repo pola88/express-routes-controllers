@@ -114,6 +114,31 @@ module.exports = function(server){
     versions: ['*']
   });
 
+  //versioned resources
+  rest.resources('fallback_to_v1_resources_controller', {
+    versions: ['1','2'],
+    collection: {
+      get: ['collection_action']
+    },
+    member: {
+      post: ['member_action']
+    }
+  }, function() {
+    rest.resources('fallback_to_v1_nested_resources_controller',{
+      version: ['1','2'],
+      collection: {
+        get: ['collection_action']
+      },
+      member: {
+        post: ['member_action']
+      }
+    });
+  });
+
+  rest.resources('fallback_to_base_resources_controller', {
+    versions: ['1','2']
+  });
+
 
   rest.mountRoutes(app);
 }

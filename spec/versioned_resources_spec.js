@@ -461,4 +461,37 @@ describe('Resources', function () {
 
   });
 
+  describe('Fallback to previous versioned Resources Controller', function() {
+
+    describe('fallback to v1', function() {
+
+      it('call action of v1', function(done) {
+        this.request.options.url += 'fallback_to_v1_resources_controller';
+        this.request.options.headers = {};
+        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v2+json"
+
+        this.request.execute(function(error, response, body) {
+          expect(body.msg).toEqual('fallback_to_v1_resources_controller/index');
+
+          done();
+        });
+      });
+    });
+    describe('fallback to base version', function() {
+      it('call action of non_versioned_nested_controller/index', function(done) {
+        this.request.options.url += 'fallback_to_base_resources_controller';
+        this.request.options.headers = {};
+        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v2+json"
+
+        this.request.execute(function(error, response, body) {
+          expect(body.msg).toEqual('fallback_to_base_resources_controller/index');
+
+          done();
+        });
+      });
+    });
+
+  });
+
+
 });

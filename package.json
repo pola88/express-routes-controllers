@@ -21,5 +21,9 @@
     "name": "Daniel Nicolas Mule",
     "email": "pola88@gmail.com"
   },
+  "contributors": [{
+    "name": "blanchma",
+    "email": "tute.unique@gmail.com"
+  }],
   "repository": "https://github.com/pola88/express-routes-controllers"
 }

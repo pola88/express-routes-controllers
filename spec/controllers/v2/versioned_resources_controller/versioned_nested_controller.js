@@ -3,7 +3,6 @@ module.exports = {
     before: {}
   },
   index: function(req,res) {
-    console.log(req.params);
     var parentId = req.params.versioned_versioned_resources_controller_id;
     res.json({ msg: 'versioned_resources_controller/' + parentId + '/v2/versioned_nested_controller/index'} );
   },
