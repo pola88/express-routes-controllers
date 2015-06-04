@@ -1,5 +1,11 @@
-var beforeFunction = function beforeFunction(req, res, next) {
+var beforeFunction1 = function beforeFunction(req, res, next) {
   req.message = 'foo';
+
+  next();
+}
+
+var beforeFunction2 = function beforeFunction(req, res, next) {
+  req.message += 'bar';
 
   next();
 }
@@ -7,10 +13,10 @@ var beforeFunction = function beforeFunction(req, res, next) {
 module.exports = {
   options: {
     before: {
-      index: [ beforeFunction ],
-      create: [ beforeFunction ],
-      show: [ beforeFunction ],
-      update: [ beforeFunction ]
+      index: [ beforeFunction1, beforeFunction2 ],
+      create: [ beforeFunction1 ],
+      show: [ beforeFunction1 ],
+      update: [ beforeFunction1 ]
     }
   },
   index: function(req,res) {
