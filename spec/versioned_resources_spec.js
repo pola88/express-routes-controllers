@@ -25,9 +25,9 @@ describe('Resources', function () {
         this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v5+json"
       });
 
-      it('returns 406', function(done) {
+      it('returns defined Error', function(done) {
         this.request.execute(function(error, response, body) {
-          expect(response.statusCode).toNotEqual(406);
+          expect(response.statusCode).toNotEqual(405);
 
           done();
         });

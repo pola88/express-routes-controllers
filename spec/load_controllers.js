@@ -3,7 +3,7 @@ var Rest = require('../lib');
 var rest = new Rest( { controllers: __dirname + '/controllers',
                       versioning: { header: 'Accept',
                                     grab :/.*application\/vnd.avi-on.v(\d+)\+json/,
-                                    error: '406' }
+                                    error: '405' }
                     } );
 
 module.exports = function(server){
