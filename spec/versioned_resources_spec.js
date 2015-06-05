@@ -22,7 +22,7 @@ describe('Resources', function () {
       beforeEach(function() {
         this.request.options.url += 'versioned_resources_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v5+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v5+json"
       });
 
       it('returns defined Error', function(done) {
@@ -34,11 +34,11 @@ describe('Resources', function () {
       });
     });
 
-    describe('header with application/vnd.avi-on.v1+json', function() {
+    describe('header with application/vnd.test.v1+json', function() {
       beforeEach(function() {
         this.request.options.url += 'versioned_resources_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
       });
 
       it('call index action', function(done) {
@@ -124,7 +124,7 @@ describe('Resources', function () {
         beforeEach(function() {
           this.request.options.url += 'change_name_controller';
           this.request.options.headers = {};
-          this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+          this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
         });
 
         it('returns statusCode 404', function(done) {
@@ -141,7 +141,7 @@ describe('Resources', function () {
         beforeEach(function() {
           this.request.options.url += 'versioned_custom_name';
           this.request.options.headers = {};
-          this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+          this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
         });
 
         it('call index action', function(done) {
@@ -198,7 +198,7 @@ describe('Resources', function () {
       beforeEach(function() {
         this.request.options.url += 'versioned_before_controllers';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
       });
 
       it('call index action', function(done) {
@@ -253,7 +253,7 @@ describe('Resources', function () {
       beforeEach(function() {
         this.request.options.url += 'versioned_resources_controller/2/versioned_nested_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
       });
 
       it('call index action', function(done) {
@@ -326,11 +326,11 @@ describe('Resources', function () {
   });
 
 
-  describe('header with application/vnd.avi-on.v2+json', function() {
+  describe('header with application/vnd.test.v2+json', function() {
     beforeEach(function() {
       this.request.options.url += 'versioned_resources_controller';
       this.request.options.headers = {};
-      this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v2+json"
+      this.request.options.headers["Accept"] = "application/json, application/vnd.test.v2+json"
     });
 
     it('call index action', function(done) {
@@ -414,7 +414,7 @@ describe('Resources', function () {
     beforeEach(function() {
       this.request.options.url += 'wildcard_resources_controller';
       this.request.options.headers = {};
-      this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+      this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
     });
 
     it('call index action', function(done) {
@@ -431,7 +431,7 @@ describe('Resources', function () {
       beforeEach(function() {
         this.request.options.url += 'non_versioned_resources_controller/2/versioned_nested_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
       });
 
       it('call action of versioned_nested_controller/index', function(done) {
@@ -446,7 +446,7 @@ describe('Resources', function () {
       beforeEach(function() {
         this.request.options.url += 'versioned_resources_controller/2/non_versioned_nested_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v1+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v1+json"
       });
 
       it('call action of non_versioned_nested_controller/index', function(done) {
@@ -467,7 +467,7 @@ describe('Resources', function () {
       it('call action of v1', function(done) {
         this.request.options.url += 'fallback_to_v1_resources_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v2+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v2+json"
 
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('fallback_to_v1_resources_controller/index');
@@ -480,7 +480,7 @@ describe('Resources', function () {
       it('call action of non_versioned_nested_controller/index', function(done) {
         this.request.options.url += 'fallback_to_base_resources_controller';
         this.request.options.headers = {};
-        this.request.options.headers["Accept"] = "application/json, application/vnd.avi-on.v2+json"
+        this.request.options.headers["Accept"] = "application/json, application/vnd.test.v2+json"
 
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('fallback_to_base_resources_controller/index');

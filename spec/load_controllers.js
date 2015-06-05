@@ -2,7 +2,7 @@ var Rest = require('../lib');
 
 var rest = new Rest( { controllers: __dirname + '/controllers',
                       versioning: { header: 'Accept',
-                                    grab :/.*application\/vnd.avi-on.v(\d+)\+json/,
+                                    grab :/.*application\/vnd.test.v(\d+)\+json/,
                                     error: '405' }
                     } );
 

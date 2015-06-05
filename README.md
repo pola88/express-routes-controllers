@@ -18,6 +18,14 @@ var Rest = require('express-routes-controllers');
 
 var rest = new Rest( { controllers: __dirname + '/app/controllers' } );
 
+Optinal headers to version:
+
+var rest = new Rest( { controllers: __dirname + '/app/controllers',
+                      versioning: { header: 'Accept',
+                                    grab :/.*application\/vnd.mycompany.v(\d+)\+json/,
+                                    error: '406' }
+                    } );
+
 ```
 
 And then, add the routes:
@@ -92,10 +100,39 @@ rest.resources('your_controller', {
 // POST /your_controller/:your_controller/member_action
 ```
 
+To add support for just some versions:
+
+```
+rest.resources('your_controller', {
+   versions: ['1']
+  }
+});
+
+This would require a specific folder structure:
+<controller's folder>/v1/your_controller.js
+
+
+To support all versions, remove the version's option or use a wildcard
+
+```
+rest.resources('your_controller', {
+   versions: ['*']
+  }
+});
+
+Or just:
+
+rest.resources('your_controller', {})
+
+In both cases, it would work with default controller's folder:
+<controller's folder>/your_controller.js
+
+
 Possible options:
 
 ```
   var options = {
+                  versions: ['1','2'],
                   collection: {
                     get: [ /* Array of custom actions */ ],
                     post: [ /* Array of custom actions */ ],
@@ -119,6 +156,18 @@ rest.resources('your_controller', function(){
   rest.resources('another_controller');
 });
 // '/your_controller/:your_controller_id/another_controller'
+
+
+And you also set versions in it and only for the nested:
+
+rest.resources('your_controller', function(){
+  rest.resources('another_controller', {versions: ['2']});
+});
+
+The required folder structure would be:
+<controller's folder>/your_controller.js
+<controller's folder>/v2/your_controller/another_controller.js
+
 ```
 
 ## Change the url
