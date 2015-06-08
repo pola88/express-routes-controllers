@@ -1,6 +1,6 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Creates routes for the controllers",
   "dependencies": {
     "express": "3.4.8",
@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "request": "2.34.0",
-    "jasmine-node": "1.13.1",
+    "jasmine-node": "~1.14",
     "commander": "~2.1.0",
     "config": "0.4.35"
   },
@@ -21,5 +21,9 @@
     "name": "Daniel Nicolas Mule",
     "email": "pola88@gmail.com"
   },
+  "contributors": [{
+    "name": "blanchma",
+    "email": "tute.unique@gmail.com"
+  }],
   "repository": "https://github.com/pola88/express-routes-controllers"
 }

@@ -14,22 +14,22 @@ module.exports = {
     }
   },
   index: function(req,res) {
-    res.json({ msg: 'before_controllers/index_' + req.message } );
+    res.json({ msg: 'v2/versioned_before_controllers/index_' + req.message } );
   },
   create: function(req,res) {
-    res.json({ msg: 'before_controllers/create_' + req.message } );
+    res.json({ msg: 'v2/versioned_before_controllers/create_' + req.message } );
   },
   show: function(req,res) {
-    res.json( { msg: 'before_controllers/show_' + req.message  } );
+    res.json( { msg: 'v2/versioned_before_controllers/show_' + req.message  } );
   },
   destroy: function(req,res) {
     if (req.message) {
-      res.json({ msg: 'before_controllers/destroy_' + req.message } );
+      res.json({ msg: 'v2/versioned_before_controllers/destroy_' + req.message } );
     } else {
-      res.json({ msg: 'before_controllers/destroy' } );
+      res.json({ msg: 'v2/versioned_before_controllers/destroy' } );
     }
   },
   update: function(req,res) {
-    res.json( { msg: 'before_controllers/update_' + req.message } );
+    res.json( { msg: 'v2/versioned_before_controllers/update_' + req.message } );
   }
 }

@@ -6,11 +6,19 @@ describe('Resources', function () {
     beforeEach(function() {
       this.request.options.url += 'resources_controller';
     });
-    
+
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resources_controller/index');
-        
+
+        done();
+      });
+    });
+
+    it('call index action', function(done) {
+      this.request.execute(function(error, response, body) {
+        expect(response.statusCode).toNotEqual(404);
+
         done();
       });
     });
@@ -20,7 +28,7 @@ describe('Resources', function () {
 
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resources_controller/create');
-        
+
         done();
       });
     });
@@ -86,12 +94,12 @@ describe('Resources', function () {
       it('returns statusCode 404', function(done) {
         this.request.execute(function(error, response, body) {
           expect(response.statusCode).toEqual(404);
-          
+
           done();
         });
-      });  
+      });
     });
-    
+
 
     describe('call with the new name', function() {
       beforeEach(function() {
@@ -101,7 +109,7 @@ describe('Resources', function () {
       it('call index action', function(done) {
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('custom_name/index');
-          
+
           done();
         });
       });
@@ -111,7 +119,7 @@ describe('Resources', function () {
 
         this.request.execute(function(error, response, body) {
           expect(body.msg).toEqual('custom_name/create');
-          
+
           done();
         });
       });
@@ -151,11 +159,11 @@ describe('Resources', function () {
     beforeEach(function() {
       this.request.options.url += 'before_controllers';
     });
-    
+
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('before_controllers/index_foo');
-        
+
         done();
       });
     });
@@ -165,7 +173,7 @@ describe('Resources', function () {
 
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('before_controllers/create_foo');
-        
+
         done();
       });
     });
@@ -205,11 +213,11 @@ describe('Resources', function () {
     beforeEach(function() {
       this.request.options.url += 'resources_controller/2/nested_controller';
     });
-    
+
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resources_controller/2/nested_controller/index');
-        
+
         done();
       });
     });
@@ -219,7 +227,7 @@ describe('Resources', function () {
 
       this.request.execute(function(error, response, body) {
         expect(body.msg).toEqual('resources_controller/2/nested_controller/create');
-        
+
         done();
       });
     });
