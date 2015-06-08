@@ -25,5 +25,12 @@
     "name": "blanchma",
     "email": "tute.unique@gmail.com"
   }],
+  "keywords": [
+    "express",
+    "version",
+    "versioning",
+    "api",
+    "controllers"
+  ],
   "repository": "https://github.com/pola88/express-routes-controllers"
 }
