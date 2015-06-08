@@ -27,6 +27,7 @@
   }],
   "keywords": [
     "express",
+    "rest",
     "version",
     "versioning",
     "api",
