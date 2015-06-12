@@ -1,4 +1,4 @@
-process.env['NODE_ENV'] = 'test';
+process.env.NODE_ENV = 'test';
 
 var spawn = require('child_process').spawn;
 var server = require('./app');
@@ -16,7 +16,7 @@ server.start( config, function () {
 
   var spawnArgs = [];
   var defaultSpecPath = './spec';
-  
+
   spawnArgs.push('--captureExceptions');
   spawnArgs.push('--verbose');
 
@@ -25,7 +25,7 @@ server.start( config, function () {
   }else{
     spawnArgs.push(commander.spec);
   }
-  
+
   var jasmineNode = spawn('jasmine-node', spawnArgs, { env: process.env } );
 
   function logToConsole(data) {
@@ -34,8 +34,8 @@ server.start( config, function () {
 
   jasmineNode.stdout.on('data', logToConsole);
   jasmineNode.stderr.on('data', logToConsole);
-  
+
   jasmineNode.on('exit', function(exitCode) {
-      server.close();
+    server.close();
   });
 });
