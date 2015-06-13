@@ -1,5 +1,3 @@
-var request = require('request');
-
 describe('Resources', function () {
 
   describe('Resources Controller', function() {

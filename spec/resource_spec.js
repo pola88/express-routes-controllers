@@ -1,11 +1,9 @@
-var request = require('request');
-
 describe('Resource', function () {
 
   describe('Resource Controller', function() {
     beforeEach(function() {
       this.request.options.url += 'resource_controller';
-    })
+    });
 
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {

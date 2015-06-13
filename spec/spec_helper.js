@@ -8,9 +8,8 @@ Request.prototype = {
   options: {},
   execute: function(callback) {
     var that = this;
-    callback = _.bind(callback,that);
+    callback = _.bind(callback, that);
     request(this.options, function(error, response, body) {
-      var body;
       try {
         body = JSON.parse(body);
       } catch (e) {
