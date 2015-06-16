@@ -4,10 +4,22 @@ var beforeFunction = function beforeFunction(req, res, next) {
   next();
 };
 
+var beforeFunction2 = function beforeFunction2(req, res, next) {
+  req.message += 'bar';
+
+  next();
+};
+
+var beforeFunction3 = function beforeFunction3(req, res, next) {
+  req.message += 'zoo';
+
+  next();
+};
+
 module.exports = {
   options: {
     before: {
-      index: [ beforeFunction ],
+      index: [ beforeFunction, beforeFunction2, beforeFunction3 ],
       create: [ beforeFunction ],
       show: [ beforeFunction ],
       update: [ beforeFunction ]
