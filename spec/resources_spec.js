@@ -160,7 +160,7 @@ describe('Resources', function () {
 
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
-        expect(body.msg).toEqual('before_controllers/index_foo');
+        expect(body.msg).toEqual('before_controllers/index_foobarzoo');
 
         done();
       });

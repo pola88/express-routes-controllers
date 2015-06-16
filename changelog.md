@@ -1,5 +1,6 @@
 # v0.2.1#
 - [BUG] Fix critical issue when Accept's header is present but not grab is provided
+- [BUG] Fix critical issue when more than one before is provided
 
 # v0.2.0#
 - [FEATURE] use different API versions
