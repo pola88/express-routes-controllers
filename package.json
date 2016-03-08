@@ -1,10 +1,10 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Creates routes for the controllers",
   "dependencies": {
     "express": "3.4.8",
-    "lodash": "2.4.1",
+    "lodash": "4.6.1",
     "inflection": "1.3.3"
   },
   "devDependencies": {
