@@ -1,3 +1,6 @@
+# v0.2.3#
+- [BUG] Support double nested controllers
+
 # v0.2.2#
 - Upgrade lodash to 4.6.1
 
