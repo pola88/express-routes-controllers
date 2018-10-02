@@ -26,6 +26,15 @@ module.exports = function(server){
       member: {
         post: ['member_action']
       }
+    }, function() {
+      rest.resources('double_nested_controller', {
+        collection: {
+          get: ['collection_action']
+        },
+        member: {
+          post: ['member_action']
+        }
+      });
     });
   });
 
