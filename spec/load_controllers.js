@@ -3,7 +3,7 @@ var Rest = require('../lib'),
 
 var rest = new Rest( { controllers: path.join(__dirname, '/controllers'),
                       versioning: { header: 'Accept',
-                                    grab: /.*application\/vnd.test.v(\d+)\+json/,
+                                    grab: /.*application\/vnd.test(.com)?.v(\d+)\+json/,
                                     error: '405' }
                     } );
 

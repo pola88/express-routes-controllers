@@ -1,3 +1,6 @@
+# v0.2.4#
+- [BUG] Support '.avi-on.com.v' urls at regex when getting versioning
+
 # v0.2.3#
 - [BUG] Support double nested controllers
 
