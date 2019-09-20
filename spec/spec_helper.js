@@ -25,7 +25,7 @@ beforeEach(function() {
   this.request = new Request();
 
   this.request.options = {
-      method: 'get',
-      url: config.url
+    method: 'get',
+    url: config.url
   };
 });

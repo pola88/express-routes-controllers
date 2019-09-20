@@ -1,16 +1,16 @@
 var Rest = require('../lib'),
-    path = require('path');
+  path = require('path');
 
 var rest = new Rest( { controllers: path.join(__dirname, '/controllers'),
-                      versioning: { header: 'Accept',
-                                    grab: /.*application\/vnd.test(.com)?.v(\d+)\+json/,
-                                    error: '405' }
-                    } );
+  versioning: { header: 'Accept',
+    grab: /.*application\/vnd.test(.com)?.v(\d+)\+json/,
+    error: '405' }
+} );
 
 module.exports = function(server){
   var app = server.app;
 
-    //resources
+  //resources
   rest.resources('resources_controller', {
     collection: {
       get: ['collection_action']
@@ -36,6 +36,8 @@ module.exports = function(server){
         }
       });
     });
+
+    rest.resources('after_double_nested_controller');
   });
 
   rest.resources('change_name_controller', {

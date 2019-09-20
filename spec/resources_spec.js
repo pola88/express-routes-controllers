@@ -281,7 +281,7 @@ describe('Resources', function () {
 
   });
 
-  describe('Dowble Nested Controller', function() {
+  describe('Double Nested Controller', function() {
     beforeEach(function() {
       this.request.options.url += 'resources_controller/2/nested_controller/3/double_nested_controller';
     });
@@ -352,7 +352,59 @@ describe('Resources', function () {
         done();
       });
     });
+  });
 
+  describe('Double Nested Controller', function() {
+    beforeEach(function() {
+      this.request.options.url += 'resources_controller/2/after_double_nested_controller';
+    });
+
+    it('call index action', function(done) {
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/2/after_double_nested_controller/index');
+
+        done();
+      });
+    });
+
+    it('call create action', function(done) {
+      this.request.options.method = 'post';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/2/after_double_nested_controller/create');
+
+        done();
+      });
+    });
+
+    it('call show action', function(done) {
+      this.request.options.url += '/123';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/2/after_double_nested_controller/show_123');
+        done();
+      });
+    });
+
+    it('call destroy action', function(done) {
+      this.request.options.url += '/123';
+      this.request.options.method = 'delete';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/2/after_double_nested_controller/destroy_123');
+        done();
+      });
+    });
+
+    it('call update action', function(done) {
+      this.request.options.url += '/123';
+      this.request.options.method = 'put';
+
+      this.request.execute(function(error, response, body) {
+        expect(body.msg).toEqual('resources_controller/2/after_double_nested_controller/update_123');
+        done();
+      });
+    });
   });
 
 });
