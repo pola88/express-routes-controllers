@@ -151,6 +151,14 @@ module.exports = function(server){
     versions: ['1', '2']
   });
 
+  rest.resources('override_default_actions', {
+    member: {
+      post: ['create']
+    },
+    collection: {
+      put: [ 'update' ]
+    },
+  });
 
   rest.mountRoutes(app);
 };
