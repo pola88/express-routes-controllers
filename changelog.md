@@ -1,3 +1,6 @@
+# v0.3.1#
+- Override default actions path
+
 # v0.3.0#
 - Add .nvmrc with node 12.18.1
 - Upgrade to express4
