@@ -4,7 +4,7 @@ var Rest = require('../lib'),
 var rest = new Rest( { controllers: path.join(__dirname, '/controllers'),
   versioning: { header: 'Accept',
     grab: /.*application\/vnd.test(.com)?.v(\d+)\+json/,
-    error: '405' }
+    error: '406' }
 } );
 
 module.exports = function(server){
@@ -100,6 +100,7 @@ module.exports = function(server){
       get: ['collection_action']
     },
     member: {
+      get: ['deprecated_member_action'],
       post: ['member_action']
     }
   }, function() {

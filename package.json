@@ -1,6 +1,6 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Creates routes for the controllers",
   "dependencies": {
     "express": "^4.17.1",
@@ -16,7 +16,7 @@
     "request": "2.88.2"
   },
   "scripts": {
-    "test": "eslint ./lib ./spec && npm run spec",
+    "test": "eslint --fix ./lib ./spec && npm run spec",
     "spec": "node spec/spec_runner.js"
   },
   "main": "./lib",
