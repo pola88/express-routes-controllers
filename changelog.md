@@ -1,5 +1,10 @@
 # Express Routes Controllers logs
 
+## 0.4.0
+
+- Update node version to fermium
+- Update dependencies
+
 ## 0.3.2
 
 - Handle error when on incorrect or not present Accept header versioning. Returns 406 status
