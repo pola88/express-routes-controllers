@@ -20,6 +20,9 @@ module.exports = {
   collection_action: function(req, res) {
     res.json( { msg: 'v1/versioned_resources_controller/collection_action' } );
   },
+  deprecated_member_action: function(req, res) {
+    res.json( { msg: 'v1/versioned_resources_controller/deprecated_member_action' } );
+  },
   member_action: function(req, res) {
     res.json( { msg: 'v1/versioned_resources_controller/member_action_' + req.params.versioned_resources_controller_id } );
   }
