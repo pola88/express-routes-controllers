@@ -1,5 +1,9 @@
 # Express Routes Controllers logs
 
+## 0.5.0
+
+- [BUG] Fixes missing middleware options for some endpoints.
+
 ## 0.4.0
 
 - Update node version to fermium
