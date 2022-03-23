@@ -1,6 +1,6 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Creates routes for the controllers",
   "dependencies": {
     "express": "^4.17.1",
@@ -28,6 +28,14 @@
     {
       "name": "blanchma",
       "email": "tute.unique@gmail.com"
+    },
+    {
+      "name": "aspero",
+      "email": "aspero@avi-on.com"
+    },
+    {
+      "name": "patricio",
+      "email": "patricio@avi-on.com"
     }
   ],
   "keywords": [
@@ -38,5 +46,5 @@
     "api",
     "controllers"
   ],
-  "repository": "https://github.com/pola88/express-routes-controllers"
+  "repository": "https://github.com/AVI-ON/express-routes-controllers"
 }

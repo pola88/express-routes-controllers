@@ -4,9 +4,15 @@ express-routes-controllers
 You can create routes for your controllers.
 
 ## Install
-
 ```
-npm install express-routes-controllers
+  npm install express-routes-controllers
+```
+
+## How Publish
+
+This package does not use Babel so there is no need to build before publishing
+```
+  npm publish
 ```
 
 ## How to use it:
