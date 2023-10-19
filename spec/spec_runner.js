@@ -1,41 +1,36 @@
 process.env.NODE_ENV = 'test';
 
-var spawn = require('child_process').spawn;
 var server = require('./app');
 var config = require('config');
 
-var commander = require('commander'),
-  _ = require('lodash');
+const { SpecReporter } = require('jasmine-spec-reporter');
+const Jasmine = require('jasmine')
+const _ = require('lodash');
 
-commander
-  .option('-s, --spec <items>', 'Spec path')
-  .parse(process.argv);
+const specFilter = process.argv[2];
+
+const jasmine = new Jasmine();
+jasmine.loadConfig({
+  spec_dir: 'spec',
+  spec_files: ['**/*_spec.js'],
+  helpers: ['./spec_helper.js'],
+  env: {
+    failSpecWithNoExpectations: false,
+    stopSpecOnExpectationFailure: false,
+    stopOnSpecFailure: false,
+    random: false,
+  },
+});
+jasmine.env.clearReporters();
+jasmine.env.addReporter(
+  new SpecReporter({ summary: { displayStacktrace: 'raw' } }),
+);
+// Remove the default dot.
+jasmine.configureDefaultReporter({ print: function () {} });
+
+afterAll(() => server.close())
 
 server.start( config, function () {
   require('./load_controllers')(server);
-
-  var spawnArgs = [];
-  var defaultSpecPath = './spec';
-
-  spawnArgs.push('--captureExceptions');
-  spawnArgs.push('--verbose');
-
-  if(_.isUndefined(commander.spec)){
-    spawnArgs.push(defaultSpecPath);
-  }else{
-    spawnArgs.push(commander.spec);
-  }
-
-  var jasmineNode = spawn('jasmine-node', spawnArgs, { env: process.env } );
-
-  function logToConsole(data) {
-    console.log(String(data));
-  }
-
-  jasmineNode.stdout.on('data', logToConsole);
-  jasmineNode.stderr.on('data', logToConsole);
-
-  jasmineNode.on('exit', function(exitCode) {
-    server.close();
-  });
+  jasmine.execute(undefined, specFilter);
 });

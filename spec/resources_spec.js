@@ -15,7 +15,7 @@ describe('Resources', function () {
 
     it('call index action', function(done) {
       this.request.execute(function(error, response, body) {
-        expect(response.statusCode).toNotEqual(404);
+        expect(response.statusCode).not.toEqual(404);
 
         done();
       });
