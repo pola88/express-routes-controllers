@@ -1,6 +1,7 @@
-const request = require('request');
-const _ = require('lodash');
-const config = require('config');
+import _ from 'lodash';
+import request from 'request';
+
+const { default: config } = await import('config');
 
 const Request = function () {};
 

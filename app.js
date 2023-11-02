@@ -1,7 +1,9 @@
-const express = require('express'),
-  path = require('path');
+import express from 'express';
+import path from 'path';
+import Rest from './lib/index.js';
 
-const Rest = require('./lib');
+// ESM doesn't have __dirname, this is a workaround
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 // https://github.com/ferlores/easy-routes/tree/master/testing
@@ -18,7 +20,7 @@ const rest = new Rest({
   controllers: path.join(__dirname, '/spec/controllers'),
 });
 
-rest.resources('resources_controller');
+await rest.resources('resources_controller');
 rest.mountRoutes(app);
 
 app.listen(3000, function () {

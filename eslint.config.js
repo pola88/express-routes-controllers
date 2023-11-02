@@ -1,4 +1,4 @@
-const Globals = require('globals');
+import Globals from 'globals';
 
 const rules = {
   'lines-between-class-members': [
@@ -21,7 +21,7 @@ const globals = {
   ...Globals.jasmine,
 };
 
-module.exports = [
+export default [
   {
     files: ['**/*.js', '**/*.cjs'],
     languageOptions: {

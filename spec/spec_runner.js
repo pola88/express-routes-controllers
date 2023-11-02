@@ -1,10 +1,10 @@
+import Jasmine from 'jasmine';
+import { SpecReporter } from 'jasmine-spec-reporter';
+import server from './app.js';
+
 process.env.NODE_ENV = 'test';
 
-const server = require('./app');
-const config = require('config');
-
-const { SpecReporter } = require('jasmine-spec-reporter');
-const Jasmine = require('jasmine');
+const { default: config } = await import('config');
 
 const specFilter = process.argv[2];
 
@@ -29,7 +29,9 @@ jasmine.configureDefaultReporter({ print() {} });
 
 afterAll(() => server.close());
 
-server.start(config, function () {
-  require('./load_controllers')(server);
+server.start(config, async () => {
+  const { default: loadControllers } = await import('./load_controllers.js');
+  await loadControllers(server);
+
   jasmine.execute(undefined, specFilter);
 });
