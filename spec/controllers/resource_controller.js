@@ -1,20 +1,20 @@
 module.exports = {
   options: {
-    before: {}
+    before: {},
   },
-  index: function(req, res) {
-    res.json({ msg: 'resource_controller/index'} );
+  index(req, res) {
+    res.json({ msg: 'resource_controller/index' });
   },
-  create: function(req, res) {
-    res.json({ msg: 'resource_controller/create'} );
+  create(req, res) {
+    res.json({ msg: 'resource_controller/create' });
   },
-  show: function(req, res) {
-    res.json( { msg: 'resource_controller/show' } );
+  show(req, res) {
+    res.json({ msg: 'resource_controller/show' });
   },
-  destroy: function(req, res) {
-    res.json({ msg: 'resource_controller/destroy'} );
+  destroy(req, res) {
+    res.json({ msg: 'resource_controller/destroy' });
   },
-  update: function(req, res) {
-    res.json( { msg: 'resource_controller/update' } );
-  }
+  update(req, res) {
+    res.json({ msg: 'resource_controller/update' });
+  },
 };

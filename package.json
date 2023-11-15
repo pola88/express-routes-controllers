@@ -9,15 +9,19 @@
   },
   "devDependencies": {
     "config": "0.4.35",
-    "eslint": "4.18.2",
+    "eslint": "^8.51.0",
+    "globals": "^13.23.0",
     "jasmine": "^5.1.0",
     "jasmine-spec-reporter": "^7.0.0",
     "method-override": "3.0.0",
+    "prettier": "^3.0.3",
     "request": "2.88.2"
   },
   "scripts": {
-    "test": "eslint --fix ./lib ./spec && npm run spec",
-    "spec": "node spec/spec_runner.js"
+    "format": "prettier --write ./lib ./spec app.js",
+    "lint": "eslint --fix ./lib ./spec app.js",
+    "spec": "node spec/spec_runner.js",
+    "test": "npm run lint && npm run spec"
   },
   "main": "./lib",
   "author": {

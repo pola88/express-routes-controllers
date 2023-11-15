@@ -1,11 +1,10 @@
 process.env.NODE_ENV = 'test';
 
-var server = require('./app');
-var config = require('config');
+const server = require('./app');
+const config = require('config');
 
 const { SpecReporter } = require('jasmine-spec-reporter');
-const Jasmine = require('jasmine')
-const _ = require('lodash');
+const Jasmine = require('jasmine');
 
 const specFilter = process.argv[2];
 
@@ -26,11 +25,11 @@ jasmine.env.addReporter(
   new SpecReporter({ summary: { displayStacktrace: 'raw' } }),
 );
 // Remove the default dot.
-jasmine.configureDefaultReporter({ print: function () {} });
+jasmine.configureDefaultReporter({ print() {} });
 
-afterAll(() => server.close())
+afterAll(() => server.close());
 
-server.start( config, function () {
+server.start(config, function () {
   require('./load_controllers')(server);
   jasmine.execute(undefined, specFilter);
 });
