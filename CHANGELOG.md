@@ -1,5 +1,11 @@
 # Express Routes Controllers logs
 
+## 1.0.0
+
+- 💣 [BREAKING CHANGE] Package is now an ESM module
+- 💣 [BREAKING CHANGE] Update node version to hydrogen (18)
+- 💣 [BREAKING CHANGE] Rest.resource and Rest.resources are now async
+
 ## 0.5.1
 
 - Change repository info on package.json
@@ -26,7 +32,6 @@
 
 - Add .nvmrc with node 12.18.1
 - Upgrade to express4
-
 
 ## v0.2.5
 

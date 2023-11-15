@@ -1,6 +1,6 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Creates routes for the controllers",
   "type": "module",
   "dependencies": {
@@ -43,6 +43,10 @@
     {
       "name": "patricio",
       "email": "patricio@avi-on.com"
+    },
+    {
+      "name": "Julián Maestri",
+      "email": "manotas@avi-on.com"
     }
   ],
   "keywords": [
