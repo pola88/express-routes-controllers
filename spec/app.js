@@ -1,27 +1,27 @@
-var express = require('express');
-var methodOverride = require('method-override');
+import express from 'express';
+import methodOverride from 'method-override';
 
-var app = express();
-// https://github.com/ferlores/easy-routes/tree/master/testing
-// configure Express
-app.use(express.urlencoded());
+const app = express();
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride());
 
-exports.start = function( config, readyCallback ) {
-  if (!this.server) {
-    this.app = app;
-    this.server = app.listen( config.port, function () {
-      console.log('Express server listening on port %d in %s mode', config.port, app.settings.env);
+export default {
+  start(config, readyCallback) {
+    if (!this.server) {
+      this.app = app;
+      this.server = app.listen(config.port, () => {
+        console.log(
+          'Express server listening on port %d in %s mode',
+          config.port,
+          app.settings.env,
+        );
 
-      // callback to call when the server is ready
-      if (readyCallback) {
-        readyCallback();
-      }
-    });
-  }
-};
-
-exports.close = function() {
-  this.server.close();
+        if (readyCallback) readyCallback();
+      });
+    }
+  },
+  close() {
+    this.server.close();
+  },
 };

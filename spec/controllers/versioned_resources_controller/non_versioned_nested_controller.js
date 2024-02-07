@@ -1,38 +1,50 @@
-module.exports = {
-  options: {
-    before: {}
-  },
-  index: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/index'} );
-  },
-  create: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/create'} );
-  },
-  show: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    var id = req.params.nested_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/show_' + id} );
-  },
-  destroy: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    var id = req.params.nested_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/destroy_' + id} );
-  },
-  update: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    var id = req.params.nested_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/update_' + id} );
-  },
-  collection_action: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    res.json({ msg: 'versioned_resources_controller/' + parentId + '/non_versioned_nested_controller/collection_action'} );
-  },
-  member_action: function(req, res) {
-    var parentId = req.params.versioned_resources_controller_id;
-    var id = req.params.nested_controller_id;
-
-    res.json({ msg: 'resources_controller/' + parentId + '/nested_controller/member_action_' + id} );
-  }
+export const options = {
+  before: {},
 };
+export function index(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/index`,
+  });
+}
+export function create(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/create`,
+  });
+}
+export function show(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  const id = req.params.nested_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/show_${id}`,
+  });
+}
+export function destroy(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  const id = req.params.nested_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/destroy_${id}`,
+  });
+}
+export function update(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  const id = req.params.nested_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/update_${id}`,
+  });
+}
+export function collection_action(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  res.json({
+    msg: `versioned_resources_controller/${parentId}/non_versioned_nested_controller/collection_action`,
+  });
+}
+export function member_action(req, res) {
+  const parentId = req.params.versioned_resources_controller_id;
+  const id = req.params.nested_controller_id;
+
+  res.json({
+    msg: `resources_controller/${parentId}/nested_controller/member_action_${id}`,
+  });
+}

@@ -1,25 +1,32 @@
 {
   "name": "express-routes-controllers",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "Creates routes for the controllers",
+  "type": "module",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "inflection": "^1.13.1",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "commander": "~2.1.0",
     "config": "0.4.35",
-    "eslint": "4.18.2",
-    "jasmine-node": "^3.0.0",
-    "method-override": "3.0.0",
+    "eslint": "^8.51.0",
+    "globals": "^13.23.0",
+    "jasmine": "^5.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "method-override": "^3.0.0",
+    "prettier": "^3.0.3",
     "request": "2.88.2"
   },
   "scripts": {
-    "test": "eslint --fix ./lib ./spec && npm run spec",
-    "spec": "node spec/spec_runner.js"
+    "format": "prettier --write ./lib ./spec app.js",
+    "lint": "eslint --fix ./lib ./spec app.js",
+    "spec": "node spec/spec_runner.js",
+    "test": "npm run lint && npm run spec"
   },
-  "main": "./lib",
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "author": {
     "name": "Daniel Nicolas Mule",
     "email": "pola88@gmail.com"
@@ -28,6 +35,18 @@
     {
       "name": "blanchma",
       "email": "tute.unique@gmail.com"
+    },
+    {
+      "name": "aspero",
+      "email": "aspero@avi-on.com"
+    },
+    {
+      "name": "patricio",
+      "email": "patricio@avi-on.com"
+    },
+    {
+      "name": "Julián Maestri",
+      "email": "manotas@avi-on.com"
     }
   ],
   "keywords": [
@@ -38,5 +57,5 @@
     "api",
     "controllers"
   ],
-  "repository": "https://github.com/pola88/express-routes-controllers"
+  "repository": "https://github.com/AVI-ON/express-routes-controllers"
 }
